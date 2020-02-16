@@ -1,0 +1,15 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 25rem;
+    height: 100vh;
+    background-color: salmon;
+    transform: translateX(-25rem);
+    transition: ease 1s;
+
+    &-open {
+        // background-color: #000;
+        transform: translateX(0);
+    }
+}
