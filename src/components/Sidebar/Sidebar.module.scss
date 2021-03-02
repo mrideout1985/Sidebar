@@ -1,15 +1,88 @@
 .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 25rem;
-    height: 100vh;
-    background-color: salmon;
-    transform: translateX(-25rem);
-    transition: ease 1s;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 25rem;
+	height: 100vh;
+	background-color: salmon;
+	transform: translateX(-25rem);
+	transition: ease 1s;
 
-    &-open {
-        // background-color: #000;
-        transform: translateX(0);
-    }
+	&-open {
+		// background-color: #000;
+		transform: translateX(0);
+	}
+
+	&[aria-expanded="false"] {
+		a {
+			visibility: hidden;
+		}
+	}
+
+	.burger {
+		display: inline-block;
+		margin-top: 1rem;
+		cursor: pointer;
+		transform: translateX(15rem);
+		transition: 2s;
+
+		&-open {
+		}
+
+		.bar1,
+		.bar2,
+		.bar3 {
+			width: 3.6rem;
+			height: 0.5rem;
+			background-color: #fff;
+			margin: 0.5rem 0;
+			transition: 0.5s;
+		}
+
+		.bar1-open {
+			transform: translateY(1rem);
+			opacity: 0;
+		}
+
+		.bar2-open {
+		}
+
+		.bar3-open {
+			transform: translateY(-1rem);
+			opacity: 0;
+		}
+	}
+	.menu-links {
+		width: 100%;
+		height: 100%;
+		background-color: silver;
+		.links {
+			display: flex;
+			flex-direction: column;
+			a {
+				width: 100%;
+				height: 5rem;
+				line-height: 5rem;
+				text-align: center;
+				position: relative;
+				transition: all 2s ease-in-out;
+
+				&:hover {
+					&:before {
+						background-color: green;
+					}
+				}
+
+				&:before {
+					position: absolute;
+					content: " ";
+					left: 0;
+					bottom: 0;
+					height: 100%;
+					width: 5%;
+					background-color: none;
+				}
+			}
+		}
+	}
 }
